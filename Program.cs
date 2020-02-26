@@ -10,12 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ITQuiz
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+namespace ITQuiz {
+    public class Program {
+        public static void Main(string[] args) {
             Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Production");
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -49,9 +46,6 @@ namespace ITQuiz
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }
 }

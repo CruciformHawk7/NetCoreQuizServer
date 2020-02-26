@@ -7,15 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ITQuiz.Classes;
 using Microsoft.AspNetCore.Http;
 
-namespace ITQuiz.Pages
-{
-    public class ResultModel : PageModel
-    {
-        [BindProperty]
-        public int Score {get; set; }
-        public void OnGet()
-        {
-            Score = AllConstants.Scores[HttpContext.Session.GetString("TeamName")];
-        }
+namespace ITQuiz.Pages {
+    public class ResultModel : PageModel {
+        public void OnGet() { }
     }
 }

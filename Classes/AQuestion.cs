@@ -3,7 +3,7 @@ using System.Linq;
 using System;
 
 namespace ITQuiz.Classes {
-    class AQuestion {
+    public class AQuestion {
         public string Ques { get; private set; }
         public string RightOption { get; private set; }
         public string Option2 { get; private set; }

@@ -7,7 +7,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace ITQuiz.Classes {
-    static class AllConstants {
+    public static class AllConstants {
         public static int size;
         private static bool isPrepared;
         public static Dictionary<string, List<AQuestion>> sets = new Dictionary<string, List<AQuestion>>();
@@ -53,28 +53,37 @@ namespace ITQuiz.Classes {
         };
 
         public static void Prepare() {
-            for (int i = 0; i<ActualQuestions.Length; i++) {
+            for (int i = 0; i < ActualQuestions.Length; i++) {
                 set.Add(new AQuestion(ActualQuestions[i], ActualRightAnswers[i], ActualOption2[i],
-                        ActualOption3[i], ActualOption4[i]));
+                    ActualOption3[i], ActualOption4[i]));
             }
+
             size = ActualQuestions.Length;
             isPrepared = true;
         }
 
         public static void AddSession(string CollegeID) {
             if (!isPrepared) Prepare();
-            var newList = copyGenerator();
-            copyGenerator().Shuffle();
-            sets.Add(CollegeID, newList);
+            
+            RNGCryptoServiceProvider rnd = new RNGCryptoServiceProvider();
+            var result = set.OrderBy(item => GetInt(rnd)).ToList();
+            sets.Add(CollegeID, result);
             Scores.Add(CollegeID, 0);
+        }
+        
+        static int GetInt(RNGCryptoServiceProvider rnd) {
+            byte[] randomInt = new byte[4];
+            rnd.GetBytes(randomInt);
+            return Convert.ToInt32(randomInt[0]);
         }
 
         public static List<AQuestion> copyGenerator() {
             List<AQuestion> list = new List<AQuestion>();
-            foreach (var item in set){
-                list.Add(new AQuestion(item.Ques, item.RightOption, item.Option2, 
+            foreach (var item in set) {
+                list.Add(new AQuestion(item.Ques, item.RightOption, item.Option2,
                     item.Option3, item.Option4));
             }
+
             return list;
         }
 
@@ -83,27 +92,6 @@ namespace ITQuiz.Classes {
             document.Add(new BsonElement("CollegeID", TeamName));
             document.Add(new BsonElement("Score", Scores[TeamName]));
             Coll.InsertOne(document);
-            
         }
     }
-    public static class ThreadSafeRandom {
-        [ThreadStatic] private static Random Local;
-
-        public static Random ThisThreadsRandom {
-            get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
-        }
-    }
-
-    static class MyExtensions {
-        public static void Shuffle<T>(this IList<T> list) {
-            int n = list.Count;
-            while (n > 1) {
-                n--;
-                int k = ThreadSafeRandom.ThisThreadsRandom.Next(n + 1);
-                T value = list[k];
-                list[k] = list[n];
-                list[n] = value;
-            }
-        }
-    } 
 }

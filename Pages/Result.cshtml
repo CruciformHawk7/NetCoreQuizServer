@@ -6,11 +6,11 @@
     ViewData["Title"] = "Result";
 }
 
-<div>
+<div class="text-center">
     <form>
     <h1>Thanks for Participating!</h1>
-    <h3>Your team, @HttpContext.Session.GetString("TeamName") scored: </h3>
-    <input type="text" asp-for="Score" readonly style="border:none; font-size: 48px; color:green;"/>
+        <h3>Your team, @HttpContext.Session.GetString("TeamName") scored 
+            <strong> @AllConstants.Scores[HttpContext.Session.GetString("TeamName")] </strong></h3>
     </form>
     <h3>Thanks for playing!</h3>
 </div>
