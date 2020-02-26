@@ -1,0 +1,16 @@
+﻿@page
+@using Microsoft.AspNetCore.Http;
+@using ITQuiz.Classes;
+@model ITQuiz.Pages.ResultModel
+@{
+    ViewData["Title"] = "Result";
+}
+
+<div>
+    <form>
+    <h1>Thanks for Participating!</h1>
+    <h3>Your team, @HttpContext.Session.GetString("TeamName") scored: </h3>
+    <input type="text" asp-for="Score" readonly style="border:none; font-size: 48px; color:green;"/>
+    </form>
+    <h3>Thanks for playing!</h3>
+</div>

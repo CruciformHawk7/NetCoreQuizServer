@@ -1,0 +1,262 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
+@import "Inter/inter.css";
+@import "pretty-checkbox.min.css";
+
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("Cascadia.ttf");
+}
+
+* {
+    font-family: 'Inter';
+}
+
+body {
+    margin: 0px;
+}
+
+span.req {
+    color: red;
+}
+
+pre  {
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 10px;
+}
+
+code {
+    font-family: "CascadiaCode";
+    font-size: 14px;
+}
+
+div.logo {
+    background-image: url("kjc-logo-dark.png");
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.logoPlaceHolder {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.userdetails {
+    position: absolute;
+    vertical-align: middle;
+    right: 10%;
+    top: 35%;
+}
+
+.pagebody {
+    padding: 1% 12% 0% 12%;
+}
+
+.iframepage {
+    position: absolute;
+    top: 6.7%;
+    height: 90%; 
+    width: 80%; 
+    border: 0px none;
+    left: 10%;
+}
+
+input.textbox[type="text"], input.textbox[type="date"], input.textbox[type="tel"],  input.textbox[type="email"], input.textbox[type="password"] {
+    width:200px;
+    border:1px solid #dadada;
+    border-radius:4px;
+    padding:5px; 
+    height: 20px;
+    transition-property: border;
+    transition-duration: 0.5s;
+}
+
+input[type="text"]:hover, input.textbox[type="date"]:hover, input[type="tel"]:hover,  input.textbox[type="email"]:hover, input.textbox[type="password"]:hover  {
+    border: 1px solid #55c3ff;
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+}
+
+input[type="text"]:focus, input.textbox[type="date"]:focus, input[type="tel"]:focus,  input.textbox[type="email"]:focus, input.textbox[type="password"]:focus  { 
+    outline:none;
+    border-radius: 4px;
+    border:1px solid #9ecaed;
+    padding: 5px;
+    -webkit-box-shadow:0 0 4px #9ecaed;
+            box-shadow:0 0 4px #9ecaed;
+}
+
+nav.Navigation {
+    position: fixed;
+    background: #00B4DB;
+    background: -webkit-gradient(linear, right top, left top, from(#0083B0), to(#00B4DB));
+    background: -o-linear-gradient(right, #0083B0, #00B4DB);
+    background: linear-gradient(to left, #0083B0, #00B4DB);
+    padding: 1px;
+    margin: 0px;
+    box-shadow: 0 4px 6px -4px black;
+    width: 100%;
+    z-index: 1;
+    user-select: none;
+}
+
+nav.Navigation ul {
+    padding: 0px 0px 0px 10%;
+    margin: 8px;
+}
+
+nav.Navigation ul li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    list-style-type: none;
+}
+
+a.navigator {
+    color: #555;
+    cursor: default;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 500ms;
+}
+
+a.navigator:hover {
+    color: #000;
+    transition-property: color;
+    transition-duration: 1000ms;
+}
+
+span.select {
+    color: #000;
+    text-decoration: none;
+    cursor: default;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: default;
+    color: #0d8ab8;
+}
+button.button {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+    background-image: -o-linear-gradient(#eee, #ccc);
+    background-image: linear-gradient(#eee, #ccc);
+    padding: 7px 14px;
+    border: #bbb 1px solid;
+    border-radius: 4px;
+    position: relative;
+    -webkit-transition-property: background border;
+    -o-transition-property: background border;
+    transition-property: background border;
+    -webkit-transition-duration: 500ms;
+         -o-transition-duration: 500ms;
+            transition-duration: 500ms;
+    z-index: 1;
+}
+
+button.button::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#eef), to(#ccf));
+    background-image:-o-linear-gradient(#eef, #ccf);
+    background-image:linear-gradient(#eef, #ccf);
+    z-index: -1;
+    transition: opacity 500ms linear;
+    opacity: 0;
+}
+
+button.button:hover::before {
+    opacity: 1;
+    border-color:#9ecaed;
+    -webkit-box-shadow:0 0 10px #9ecaed;
+            box-shadow:0 0 10px #9ecaed;
+}
+
+
+button.MainButton {
+    font-family: 'Inter';
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#42b5f8), to(#4a97fd));
+    background-image: -o-linear-gradient(#42b5f8 0%, #4a97fd 100%);
+    background-image: linear-gradient(#42b5f8 0%, #4a97fd 100%);
+    padding: 7px 14px;
+    border: #44e 1px solid;
+    border-radius: 4px;
+    position: relative;
+    -webkit-transition-property: background border;
+    -o-transition-property: background border;
+    transition-property: background border;
+    -webkit-transition-duration: 0.4s;
+         -o-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+    z-index: 1;
+}
+
+button.MainButton::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#55c3ff), to(#42b5f8));
+    background-image: -o-linear-gradient(#55c3ff 0%, #42b5f8 100%);
+    background-image: linear-gradient(#55c3ff 0%, #42b5f8 100%);
+    z-index: -1;
+    -webkit-transition: opacity 0.4s linear;
+    -o-transition: opacity 0.4s linear;
+    transition: opacity 0.4s linear;
+    opacity: 0;
+    
+}
+
+button.MainButton:hover::before {
+    opacity: 1;
+    border-color:#9ecaed;
+    -webkit-box-shadow:0 0 10px #59a5e4;
+            box-shadow:0 0 10px #59a5e4;
+}
+
+button.MainButton:active::before {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1ca3d4), to(#0d8ab8));
+    background-image: -o-linear-gradient(#1ca3d4, #0d8ab8);
+    background-image: linear-gradient(#1ca3d4, #0d8ab8);
+    color: black;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #0083B0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 1ex;
+    background-origin: content-box;
+    background-image: linear-gradient(#1ca3d4, #0d8ab8);
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0ic3ZnMiIKICAgdmlld0JveD0iMCAwIDM1Ljk3MDk4MyAyMy4wOTE1MTgiCiAgIGhlaWdodD0iNi41MTY5Mzk2bW0iCiAgIHdpZHRoPSIxMC4xNTE4MTFtbSI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjAyLjAxNDUxLC00MDcuMTIyMjUpIgogICAgIGlkPSJsYXllcjEiPgogICAgPHRleHQKICAgICAgIGlkPSJ0ZXh0MzMzNiIKICAgICAgIHk9IjYyOS41MDUwNyIKICAgICAgIHg9IjI5MS40Mjg1NiIKICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zaXplOjQwcHg7bGluZS1oZWlnaHQ6MTI1JTtmb250LWZhbWlseTpzYW5zLXNlcmlmO2xldHRlci1zcGFjaW5nOjBweDt3b3JkLXNwYWNpbmc6MHB4O2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MXB4O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4KICAgICAgICAgeT0iNjI5LjUwNTA3IgogICAgICAgICB4PSIyOTEuNDI4NTYiCiAgICAgICAgIGlkPSJ0c3BhbjMzMzgiPjwvdHNwYW4+PC90ZXh0PgogICAgPGcKICAgICAgIGlkPSJ0ZXh0MzM0MCIKICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZTo0MHB4O2xpbmUtaGVpZ2h0OjEyNSU7Zm9udC1mYW1pbHk6Rm9udEF3ZXNvbWU7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpGb250QXdlc29tZTtsZXR0ZXItc3BhY2luZzowcHg7d29yZC1zcGFjaW5nOjBweDtmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2Utb3BhY2l0eToxIj4KICAgICAgPHBhdGgKICAgICAgICAgaWQ9InBhdGgzMzQ1IgogICAgICAgICBzdHlsZT0iZmlsbDojMzMzMzMzO2ZpbGwtb3BhY2l0eToxIgogICAgICAgICBkPSJtIDIzNy41NjY5Niw0MTMuMjU1MDcgYyAwLjU1ODA0LC0wLjU1ODA0IDAuNTU4MDQsLTEuNDczMjIgMCwtMi4wMzEyNSBsIC0zLjcwNTM1LC0zLjY4MzA0IGMgLTAuNTU4MDQsLTAuNTU4MDQgLTEuNDUwOSwtMC41NTgwNCAtMi4wMDg5MywwIEwgMjIwLDQxOS4zOTM0NiAyMDguMTQ3MzIsNDA3LjU0MDc4IGMgLTAuNTU4MDMsLTAuNTU4MDQgLTEuNDUwODksLTAuNTU4MDQgLTIuMDA4OTMsMCBsIC0zLjcwNTM1LDMuNjgzMDQgYyAtMC41NTgwNCwwLjU1ODAzIC0wLjU1ODA0LDEuNDczMjEgMCwyLjAzMTI1IGwgMTYuNTYyNSwxNi41NDAxNyBjIDAuNTU4MDMsMC41NTgwNCAxLjQ1MDg5LDAuNTU4MDQgMi4wMDg5MiwwIGwgMTYuNTYyNSwtMTYuNTQwMTcgeiIgLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=");
+}
+
+fieldset.formbox {
+    border: 1px #1ca3d4 solid;
+    border-radius: 5px;
+    margin: 5px;
+    width: 100%;
+}
+
+form td {
+    padding: 10px;
+    padding-right: 30px;
+}

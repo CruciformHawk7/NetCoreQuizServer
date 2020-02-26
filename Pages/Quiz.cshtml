@@ -1,0 +1,23 @@
+@page
+@using Microsoft.AspNetCore.Http
+@model ITQuiz.Pages.Quiz
+@{
+	ViewData["Title"] = @HttpContext.Session.GetString("TeamName");
+}
+
+<!DOCTYPE html>
+
+<div id="timer"></div>
+<h3>Welcome, @HttpContext.Session.GetString("TeamName")!</h3>
+
+<br />
+<br />
+<form method = "post" asp-page-handler = "" style="position:relative;">
+	<div>
+		<input type="text" id = "Question" name = "Question" asp-for="Question" style="border: none; " readonly /> <br />
+		<input asp-for="Option1" type="submit" asp-page-handler="Option1" class="height: 300px; width: 30%; padding-left: 10px;"/>
+		<input asp-for="Option2" type="submit" asp-page-handler="Option2" class="height: 300px; width: 30%; padding-left: 10px; left: 33%" />
+		<input asp-for="Option3" type="submit" asp-page-handler="Option3" class="height: 300px; width: 30%; padding-left: 10px; left: 66%"/>
+		<input asp-for="Option4" type="submit" asp-page-handler="Option4" class="height: 300px; width: 30%; padding-left: 10px; left: 66%"/>
+	</div>
+</form>
